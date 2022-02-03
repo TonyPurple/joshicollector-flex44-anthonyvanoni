@@ -15,5 +15,9 @@
         <p>Age: {{ joshi.age }}</p>
         {% endif %}
     </div>
+    <div class="card-action">
+        <a href="{% url 'joshis_update' joshi.id %}">Edit</a>
+        <a href="{% url 'joshis_delete' joshi.id %}">Delete</a>
+    </div>
 </div>
 {% endblock %}

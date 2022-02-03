@@ -17,11 +17,12 @@
         <nav>
             <div class="nav-wrapper">
                 <ul>
-                    <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Joshi Collector</a></li>
+                    <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Joshi Collector</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/joshis">View All My Joshis</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'joshis_create' %}">Add a Joshi</a></li>
+                    <li><a href="{% url 'index' %}">View All My Joshis</a></li>
                 </ul>
             </div>
         </nav>

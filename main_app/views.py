@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Joshi
 
 # Add the following import
@@ -17,3 +18,15 @@ def joshis_index(request):
 def joshis_detail(request, joshi_id):
   joshi = Joshi.objects.get(id=joshi_id)
   return render(request, 'joshis/detail.html', { 'joshi': joshi })
+
+class JoshiCreate(CreateView):
+  model = Joshi
+  fields = '__all__'
+
+class JoshiUpdate(UpdateView):
+  model = Joshi
+  fields = ['name', 'promotion', 'style', 'nickname', 'age', 'finisher']
+
+class JoshiDelete(DeleteView):
+  model = Joshi
+  success_url = '/joshis/'
