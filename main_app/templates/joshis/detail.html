@@ -14,6 +14,12 @@
         {% else %}
         <p>Age: {{ joshi.age }}</p>
         {% endif %}
+        <p>It Factor: {{ joshi.itfactor }}</p>
+        <p>Aerial: {{ joshi.aerial }}</p>
+        <p>Power: {{ joshi.power }}</p>
+        <p>Speed: {{ joshi.speed }}</p>
+        <p>Striking: {{ joshi.striking }}</p>
+        <p>Technique: {{ joshi.technique }}</p>
     </div>
     <div class="card-action">
         <a href="{% url 'joshis_update' joshi.id %}">Edit</a>

@@ -17,7 +17,7 @@ def joshis_index(request):
 
 def joshis_detail(request, joshi_id):
   joshi = Joshi.objects.get(id=joshi_id)
-  return render(request, 'joshis/detail.html', { 'joshi': joshi })
+  return render(request, 'joshis/detail.html', { 'joshi': joshi } )
 
 class JoshiCreate(CreateView):
   model = Joshi
@@ -25,7 +25,7 @@ class JoshiCreate(CreateView):
 
 class JoshiUpdate(UpdateView):
   model = Joshi
-  fields = ['name', 'promotion', 'style', 'nickname', 'age', 'finisher']
+  fields = '__all__'
 
 class JoshiDelete(DeleteView):
   model = Joshi
