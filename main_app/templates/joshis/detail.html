@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Joshi Details</h1>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ joshi.name }}</span>
+        <p>Promotion: {{ joshi.promotion }}</p>
+        <p>Style: {{ joshi.style }}</p>
+        <p>Nickname: {{ joshi.nickname }}</p>
+        <p>Finisher: {{ joshi.finisher }}</p>
+        {% if joshi.age > 29 %}
+        <p>Age: Unknown</p>
+        {% else %}
+        <p>Age: {{ joshi.age }}</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
