@@ -1,6 +1,16 @@
 from django.db import models
 from django.urls import reverse
 
+class Item(models.Model):
+  name = models.CharField(max_length=50)
+  type = models.CharField(max_length=50)
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('items_detail', kwargs={'pk': self.id})
+
 class Joshi(models.Model):
     name = models.CharField(max_length=100)
     promotion = models.CharField(max_length=100)
@@ -14,6 +24,7 @@ class Joshi(models.Model):
     speed = models.IntegerField(default=50)
     striking = models.IntegerField(default=50)
     aerial = models.IntegerField(default=50)
+    items = models.ManyToManyField(Item)
 
     def __str__(self):
         return self.name
