@@ -34,5 +34,7 @@ class Joshi(models.Model):
 
     def overall(self):
       overall = ((self.itfactor + self.technique + self.power + self.speed + self.striking + self.aerial) /6)
-      return overall 
+      overall_round = round(overall, 1)
+      return overall_round
+
 
