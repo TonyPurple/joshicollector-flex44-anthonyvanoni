@@ -7,11 +7,11 @@ from .forms import BookingForm
 
 class JoshiCreate(CreateView):
   model = Joshi
-  fields = '__all__'
+  fields = ['name', 'promotion', 'style', 'nickname', 'finisher', 'age', 'itfactor', 'technique', 'power', 'speed', 'striking', 'aerial']
 
 class JoshiUpdate(UpdateView):
   model = Joshi
-  fields = '__all__'
+  fields = ['name', 'promotion', 'style', 'nickname', 'finisher', 'age', 'itfactor', 'technique', 'power', 'speed', 'striking', 'aerial']
 
 class JoshiDelete(DeleteView):
   model = Joshi
