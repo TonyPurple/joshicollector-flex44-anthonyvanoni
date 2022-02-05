@@ -17,9 +17,6 @@ class JoshiDelete(DeleteView):
   model = Joshi
   success_url = '/joshis/'
 
-# Add the following import
-from django.http import HttpResponse
-
 def home(request):
   return render(request, 'home.html')
 
