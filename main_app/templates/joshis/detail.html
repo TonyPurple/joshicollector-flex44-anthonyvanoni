@@ -30,6 +30,35 @@
             </div>
         </div>
     </div>
+    <div class="col s6">
+        <form action="{% url 'add_booking' joshi.id %}" method="post">
+            {% csrf_token %} {{ booking_form.as_p }}
+            <input type="submit" class="btn" value="Add Booking">
+        </form>
+        <br> {% if joshi.booked_for_today %}
+        <div class="card-panel teal-text center-align">{{joshi.name}} has been booked solidly for today</div>
+        {% else %}
+        <div class="card-panel red-text center-align">{{joshi.name}} might be feeling underutilized</div>
+        {% endif %}
+
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Booking</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in joshi.booking_set.all %}
+                <tr>
+                    <td>{{booking.date}}</td>
+                    <td>{{booking.get_booking_display}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>
 <hr>
 <div class="row">
@@ -75,4 +104,18 @@
         {% endif %}
     </div>
 </div>
+
+<script>
+    var dateEl = document.getElementById('id_date');
+    M.Datepicker.init(dateEl, {
+        format: 'yyyy-mm-dd',
+        defaultDate: new Date(),
+        setDefaultDate: true,
+        autoClose: true
+    });
+
+    // add additional JS to initialize select below
+    var selectEl = document.getElementById('id_booking');
+    M.FormSelect.init(selectEl);
+</script>
 {% endblock %}
