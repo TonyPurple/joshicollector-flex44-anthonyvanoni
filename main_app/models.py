@@ -32,3 +32,7 @@ class Joshi(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'joshi_id': self.id})
 
+    def overall(self):
+      overall = ((self.itfactor + self.technique + self.power + self.speed + self.striking + self.aerial) /6)
+      return overall 
+
