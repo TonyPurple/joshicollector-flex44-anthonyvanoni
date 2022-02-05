@@ -8,7 +8,8 @@ BOOKINGS = (
   ('T', 'Tag Match'),
   ('U', 'Unit Match'),
   ('G', 'Gimmick Match'),
-  ('M', 'Media Appearance')
+  ('M', 'Media Appearance'),
+  ('P', 'In-ring Promo')
 )
 
 class Item(models.Model):
