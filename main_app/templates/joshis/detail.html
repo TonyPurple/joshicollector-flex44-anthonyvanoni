@@ -2,28 +2,76 @@
 
 <h1>Joshi Details</h1>
 
-<div class="card">
-    <div class="card-content">
-        <span class="card-title">{{ joshi.name }}</span>
-        <p>Promotion: {{ joshi.promotion }}</p>
-        <p>Style: {{ joshi.style }}</p>
-        <p>Nickname: {{ joshi.nickname }}</p>
-        <p>Finisher: {{ joshi.finisher }}</p>
-        {% if joshi.age > 29 %}
-        <p>Age: Unknown</p>
-        {% else %}
-        <p>Age: {{ joshi.age }}</p>
-        {% endif %}
-        <p>It Factor: {{ joshi.itfactor }}</p>
-        <p>Aerial: {{ joshi.aerial }}</p>
-        <p>Power: {{ joshi.power }}</p>
-        <p>Speed: {{ joshi.speed }}</p>
-        <p>Striking: {{ joshi.striking }}</p>
-        <p>Technique: {{ joshi.technique }}</p>
+<div class="row">
+    <div class="col s6">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{ joshi.name }}</span>
+                <p>Promotion: {{ joshi.promotion }}</p>
+                <p>Style: {{ joshi.style }}</p>
+                <p>Nickname: {{ joshi.nickname }}</p>
+                <p>Finisher: {{ joshi.finisher }}</p>
+                {% if joshi.age > 29 %}
+                <p>Age: Unknown</p>
+                {% else %}
+                <p>Age: {{ joshi.age }}</p>
+                {% endif %}
+                <p>It Factor: {{ joshi.itfactor }}</p>
+                <p>Aerial: {{ joshi.aerial }}</p>
+                <p>Power: {{ joshi.power }}</p>
+                <p>Speed: {{ joshi.speed }}</p>
+                <p>Striking: {{ joshi.striking }}</p>
+                <p>Technique: {{ joshi.technique }}</p>
+            </div>
+            <div class="card-action">
+                <a href="{% url 'joshis_update' joshi.id %}">Edit</a>
+                <a href="{% url 'joshis_delete' joshi.id %}">Delete</a>
+            </div>
+        </div>
     </div>
-    <div class="card-action">
-        <a href="{% url 'joshis_update' joshi.id %}">Edit</a>
-        <a href="{% url 'joshis_delete' joshi.id %}">Delete</a>
+</div>
+<hr>
+<div class="row">
+    <div class="col s6">
+        <h3>{{ joshi.name }}'s Items</h3>
+        {% if joshi.items.count %} {% for item in joshi.items.all %}
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">
+              A <span class="teal-text">{{ item.type }}</span> {{ item.name }}
+                </span>
+            </div>
+            <div class="card-action">
+                <form action="{% url 'unassoc_item' joshi.id item.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">Remove</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %} {% else %}
+        <h5>No Items :(</h5>
+        {% endif %}
+    </div>
+    <!-- Available items will come after this line -->
+    <div class="col s6">
+        <h3>Available Items</h3>
+        {% if items.count %} {% for item in items.all %}
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">
+              A <span class="teal-text">{{ item.type }}</span> {{ item.name }}
+                </span>
+            </div>
+            <div class="card-action">
+                <form action="{% url 'assoc_item' joshi.id item.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">Add</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %} {% else %}
+        <h5>{{joshi.name}} Already Has All Items Available</h5>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
