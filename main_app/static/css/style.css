@@ -17,3 +17,17 @@ footer.page-footer {
     padding-top: 0;
     text-align: right;
 }
+
+h1 {
+    background-color: white;
+    padding: 10px;
+    margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form {
+    background-color: white;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5%;
+}
