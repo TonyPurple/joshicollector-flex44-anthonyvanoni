@@ -21,7 +21,7 @@
     }
     
     nav .nav-wrapper {
-        background-color: rgb(57, 121, 138);
+        background-color: #C6D8FF;
         padding: 0;
         width: 100%;
         margin: 0 auto;
@@ -29,7 +29,7 @@
     
     #logo {
         height: 100%;
-        width: 225px;
+        width: 175px;
     }
     
     .menu-button {
@@ -55,8 +55,8 @@
     }
     
     .dropdown-menu a:hover {
-        background-color: rgb(57, 121, 138);
-        color: rgb(273, 117, 118);
+        background-color: #C6D8FF;
+        color: #BB45BB;
         padding: 10px;
     }
     
@@ -72,7 +72,7 @@
     footer.page-footer {
         padding-top: 0;
         text-align: right;
-        background-color: rgb(57, 121, 138);
+        background-color: #C6D8FF
     }
     
     h1 {
