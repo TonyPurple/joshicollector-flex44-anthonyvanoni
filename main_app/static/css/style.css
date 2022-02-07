@@ -18,6 +18,12 @@
     .col.s6 {
         background-color: white;
         padding: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 5px;
+    }
+    
+    label {
+        color: #BB45BB;
     }
     
     nav .nav-wrapper {
@@ -40,14 +46,15 @@
         font-size: 15px;
         cursor: pointer;
         border: 1px solid;
+        width: 150px;
     }
     
     .dropdown-menu {
         display: none;
         background-color: #BB45BB;
-        min-width: 150px;
+        min-width: 149px;
         z-index: 1;
-        color: rgb(57, 121, 138);
+        color: #C6D8FF;
     }
     
     .dropdown-menu a {
@@ -91,4 +98,21 @@
     
     .card .card-content {
         font-size: 12px;
+    }
+    
+    .about {
+        background-color: white;
+        color: #BB45BB;
+        padding: 10px;
+    }
+    
+    .home-title {
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .delete-confirm-message {
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
     }
