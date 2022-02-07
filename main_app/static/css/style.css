@@ -20,9 +20,15 @@ main {
     padding: 10px;
 }
 
+nav .nav-wrapper {
+    background-color: rgb(57, 121, 138);
+    padding: 0;
+}
+
 footer.page-footer {
     padding-top: 0;
     text-align: right;
+    background-color: rgb(57, 121, 138);
 }
 
 h1 {
