@@ -7,7 +7,7 @@
         background-attachment: fixed;
         background-size: cover;
         /* background by SVGBackgrounds.com */
-        color: rgb(273, 117, 118);
+        color: #BB45BB;
         font-weight: bold;
     }
     
@@ -33,7 +33,7 @@
     }
     
     .menu-button {
-        background-color: rgb(57, 121, 138);
+        background-color: #BB45BB;
         color: white;
         padding: 15px;
         margin-right: 85px;
@@ -44,7 +44,7 @@
     
     .dropdown-menu {
         display: none;
-        background-color: rgb(273, 117, 118);
+        background-color: #BB45BB;
         min-width: 150px;
         z-index: 1;
         color: rgb(57, 121, 138);
