@@ -7,6 +7,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     /* background by SVGBackgrounds.com */
+    color: rgb(273, 117, 118);
+    font-weight: bold;
 }
 
 main {
