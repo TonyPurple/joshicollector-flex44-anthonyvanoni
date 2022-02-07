@@ -25,12 +25,36 @@ nav .nav-wrapper {
     padding: 0;
 }
 
+.menu-button {
+    background-color: rgb(57, 121, 138);
+    color: white;
+    padding: 15px;
+    margin-right: 85px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid;
+}
+
 .dropdown-menu {
     display: none;
     background-color: rgb(273, 117, 118);
     min-width: 150px;
     z-index: 1;
     color: rgb(57, 121, 138);
+}
+
+.dropdown-menu a:hover {
+    background-color: rgb(57, 121, 138);
+    color: rgb(273, 117, 118);
+}
+
+.right-menu:hover .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-menu:hover .menu-button {
+    background-color: transparent
 }
 
 footer.page-footer {
