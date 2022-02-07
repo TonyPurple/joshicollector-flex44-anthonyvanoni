@@ -20,17 +20,15 @@
     <header class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <ul>
-                    <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Joshi Collector</a></li>
-                </ul>
+                <a href="{% url 'home' %}"><img id="logo" src="{% static 'images/android-chrome-192x192.png' %}" /></a>
                 <div class="right-menu" style="float:right">
                     <button class="menu-button">Menu</button>
                     <div class="dropdown-menu">
-                        <li><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'items_create' %}">Add an Item</a></li>
-                        <li><a href="{% url 'items_index' %}">View All Items</a></li>
-                        <li><a href="{% url 'joshis_create' %}">Add a Joshi</a></li>
-                        <li><a href="{% url 'index' %}">View All My Joshis</a></li>
+                        <a href="{% url 'about' %}">About</a>
+                        <a href="{% url 'items_create' %}">Add an Item</a>
+                        <a href="{% url 'items_index' %}">View All Items</a>
+                        <a href="{% url 'joshis_create' %}">Add a Joshi</a>
+                        <a href="{% url 'index' %}">View All My Joshis</a>
                     </div>
                 </div>
             </div>
