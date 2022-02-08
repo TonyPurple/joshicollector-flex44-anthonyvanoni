@@ -9,9 +9,9 @@
                 <span class="card-title">{{ item.name }}</span>
                 <p>Type: {{ item.type }}</p>
             </div>
-            <div class="card-action">
-                <a href="{% url 'items_update' item.id %}">Edit</a>
-                <a href="{% url 'items_delete' item.id %}">Delete</a>
+            <div class="card-action indigo accent-1">
+                <a class="cyan-text text-darken-4" href="{% url 'items_update' item.id %}">Edit</a>
+                <a class="cyan-text text-darken-4" href="{% url 'items_delete' item.id %}">Delete</a>
             </div>
         </div>
     </div>

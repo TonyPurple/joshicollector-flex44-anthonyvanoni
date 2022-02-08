@@ -7,45 +7,45 @@
         <div class="card">
             <div class="card-content">
                 <span class="card-title">{{ joshi.name }}</span>
-                <p>Promotion: {{ joshi.promotion }}</p>
-                <p>Style: {{ joshi.style }}</p>
-                <p>Nickname: {{ joshi.nickname }}</p>
-                <p>Finisher: {{ joshi.finisher }}</p>
+                <p><span class="teal-text">Promotion:</span> {{ joshi.promotion }}</p>
+                <p><span class="teal-text">Style:</span> {{ joshi.style }}</p>
+                <p><span class="teal-text">Nickname:</span> {{ joshi.nickname }}</p>
+                <p><span class="teal-text">Finisher:</span> {{ joshi.finisher }}</p>
                 {% if joshi.age > 29 %}
-                <p>Age: Unknown</p>
+                <p><span class="teal-text">Age:</span> Unknown</p>
                 {% else %}
-                <p>Age: {{ joshi.age }}</p>
+                <p><span class="teal-text">Age:</span> {{ joshi.age }}</p>
                 {% endif %}
-                <p>It Factor: {{ joshi.itfactor }}</p>
-                <p>Technique: {{ joshi.technique }}</p>
-                <p>Power: {{ joshi.power }}</p>
-                <p>Speed: {{ joshi.speed }}</p>
-                <p>Striking: {{ joshi.striking }}</p>
-                <p>Aerial: {{ joshi.aerial }}</p>
-                <p>Overall: {{ joshi.overall }}</p>
+                <p><span class="teal-text">It Factor:</span> {{ joshi.itfactor }}</p>
+                <p><span class="teal-text">Technique:</span> {{ joshi.technique }}</p>
+                <p><span class="teal-text">Power:</span> {{ joshi.power }}</p>
+                <p><span class="teal-text">Speed:</span> {{ joshi.speed }}</p>
+                <p><span class="teal-text">Striking:</span> {{ joshi.striking }}</p>
+                <p><span class="teal-text">Aerial:</span> {{ joshi.aerial }}</p>
+                <p><span class="teal-text">Overall:</span> {{ joshi.overall }}</p>
             </div>
-            <div class="card-action">
-                <a href="{% url 'joshis_update' joshi.id %}">Edit</a>
-                <a href="{% url 'joshis_delete' joshi.id %}">Delete</a>
+            <div class="card-action indigo accent-1">
+                <a class="cyan-text text-darken-4" href="{% url 'joshis_update' joshi.id %}">Edit</a>
+                <a class="cyan-text text-darken-4" href="{% url 'joshis_delete' joshi.id %}">Delete</a>
             </div>
         </div>
     </div>
     <div class="col s6">
         <form action="{% url 'add_booking' joshi.id %}" method="post">
             {% csrf_token %} {{ booking_form.as_p }}
-            <input type="submit" class="btn" value="Add Booking">
+            <input type="submit" class="btn blue-grey" value="Add Booking">
         </form>
         <br> {% if joshi.booked_for_today %}
         <div class="card-panel teal-text center-align">{{joshi.name}} has been booked solidly for today</div>
         {% else %}
-        <div class="card-panel red-text center-align">{{joshi.name}} might be feeling underutilized</div>
+        <div class="card-panel deep-orange-text text-accent-3 center-align">{{joshi.name}} might be feeling underutilized</div>
         {% endif %}
 
-        <table class="striped">
+        <table class="responsive-table striped highlight centered">
             <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Booking</th>
+                    <th class="teal-text">Date</th>
+                    <th class="teal-text">Booking</th>
                 </tr>
             </thead>
             <tbody>
@@ -74,7 +74,7 @@
             <div class="card-action">
                 <form action="{% url 'unassoc_item' joshi.id item.id %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="btn">Remove</button>
+                    <button type="submit" class="btn blue-grey">Remove</button>
                 </form>
             </div>
         </div>
@@ -95,7 +95,7 @@
             <div class="card-action">
                 <form action="{% url 'assoc_item' joshi.id item.id %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="btn">Add</button>
+                    <button type="submit" class="btn blue-grey">Add</button>
                 </form>
             </div>
         </div>
