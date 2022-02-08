@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Item List</h1>
+<h1 class="home-title">Item List</h1>
 
 {% for item in item_list %}
 <a href="{% url 'items_detail' item.id %}">
