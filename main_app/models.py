@@ -67,3 +67,10 @@ class Booking(models.Model):
   # change the default sort
   class Meta:
     ordering = ['-date']
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    joshi = models.ForeignKey(Joshi, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for joshi_id: {self.joshi_id} @{self.url}"
