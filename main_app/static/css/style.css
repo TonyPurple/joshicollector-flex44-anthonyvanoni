@@ -98,6 +98,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    /* margin: 50px 30px 30px 30px; */
 }
 
 form {
@@ -112,6 +113,8 @@ form {
 
 .form-icon {
     padding-top: 1%;
+    max-width: 100px;
+    margin-left: 30px;
 }
 
 .card .card-content {
