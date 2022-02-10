@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <h1 class="home-title">Joshi Collector</h1>
 
-<img class="responsive-img" src="https://i.imgur.com/DkBvISY.jpg"> {% endblock %}
+<img class="responsive-img" src="{% static 'images/home.jpeg' %}" alt="Home Image" /> {% endblock %}

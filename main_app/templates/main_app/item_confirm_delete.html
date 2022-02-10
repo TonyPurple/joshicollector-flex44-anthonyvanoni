@@ -1,8 +1,11 @@
-{% extends 'base.html' %} {% block content %}
-<h1 class="home-title">Delete Item</h1>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="page-header">
+    <img class="form-icon" src="{% static 'images/formitem.png' %}" alt="Delete Form" />
+    <h1 class="home-title">Delete Item</h1>
+</div>
+
 
 <h4 class="delete-confirm-message">Are you sure you want to delete <span class="teal-text">{{ object.name }}</span>?</h4>
-
 <form action="" method="POST">
     {% csrf_token %}
     <input type="submit" value="Yes - Delete!" class="btn blue-grey">

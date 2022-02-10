@@ -1,6 +1,9 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="page-header">
+    <img class="form-icon" src="{% static 'images/formitem.png' %}" alt="Item List" />
 
-<h1 class="home-title">Item List</h1>
+    <h1 class="home-title">Item List</h1>
+</div>
 
 {% for item in item_list %}
 <a class="deep-purple-text text-lighten-5" href="{% url 'items_detail' item.id %}">
