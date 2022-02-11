@@ -7,9 +7,20 @@
         background-size: cover;
         background-position: center;
         /* background by SVGBackgrounds.com */
-        color: #BB45BB;
         font-weight: bold;
         justify-content: center;
+        color: var(--color);
+        --color: #BB45BB;
+        --bg-color: white;
+        --nav-bg: #C6D8FF;
+        --borders: rgb(36, 116, 248) solid 2px;
+        --text-color: rgb(0, 0, 0);
+        --link-hover-color: rgb(16, 56, 158);
+        --card-box-shadow: 5px 5px 6px -1px #AAA;
+        --font-xtreme: 4.2rem;
+        --font-xxl: 3.6rem;
+        --font-reg: 12px;
+        --card-border-radius: 6px;
     }
     
     main {
@@ -17,45 +28,48 @@
     }
     
     .col.s6 {
-        background-color: white;
+        background-color: var(--bg-color);
         padding: 10px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        border-radius: 5px;
     }
     
     label {
-        color: #BB45BB;
+        color: var(--color);
     }
     
     nav .nav-wrapper {
-        background-color: #C6D8FF;
+        background-color: var(--nav-bg);
         padding: 0;
         width: 100%;
         margin: 0 auto;
+        box-shadow: var(--card-box-shadow);
     }
     
     #logo {
         height: 100%;
         width: 175px;
+        box-shadow: var(--card-box-shadow);
     }
     
     .menu-button {
-        background-color: #BB45BB;
-        color: white;
+        background-color: var(--color);
+        color: var(--bg-color);
         padding: 15px;
         margin-right: 85px;
         font-size: 15px;
         cursor: pointer;
-        border: 1px solid;
+        border: var(--borders);
         width: 150px;
+        box-shadow: var(--card-box-shadow);
     }
     
     .dropdown-menu {
         display: none;
-        background-color: #BB45BB;
+        background-color: var(--color);
         min-width: 149px;
         z-index: 1;
-        color: #C6D8FF;
+        color: var(--nav-bg);
+        box-shadow: var(--card-box-shadow);
     }
     
     .dropdown-menu a {
@@ -67,28 +81,31 @@
     }
     
     .dropdown-menu a:hover {
-        background-color: #C6D8FF;
-        color: #BB45BB;
+        background-color: var(--nav-bg);
+        color: var(--link-hover-color);
         padding: 10px;
+        border: var(--borders);
     }
     
     .right-menu:hover .dropdown-menu {
         display: flex;
         flex-direction: column;
+        border: var(--borders);
     }
     
     .right-menu:hover .menu-button {
-        background-color: transparent
+        background-color: transparent;
+        color: var(--text-color);
     }
     
     footer.page-footer {
         padding-top: 0;
         text-align: right;
-        background-color: #C6D8FF
+        background-color: var(--nav-bg);
     }
     
     h1 {
-        background-color: white;
+        background-color: var(--bg-color);
         padding: 10px;
         margin: 20px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -104,36 +121,51 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        background-color: white;
+        background-color: var(--bg-color);
         padding: 10px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        border-radius: 5%;
     }
     
     .form-icon {
         padding-top: 1%;
         max-width: 100px;
         margin-left: 30px;
+        box-shadow: var(--card-box-shadow);
+        border-radius: var(--card-border-radius);
     }
     
     .card .card-content {
-        font-size: 12px;
+        font-size: var(--font-reg);
     }
     
     .about {
-        background-color: white;
-        color: #BB45BB;
+        background-color: var(--bg-color);
+        color: var(--link-hover-color);
         padding-top: 50px;
     }
     
     .home-title {
         text-align: center;
         font-weight: bold;
-        font-size: 60px;
+        font-size: var(--font-xtreme);
     }
     
     .delete-confirm-message {
-        background-color: white;
+        background-color: var(--bg-color);
         padding: 5px;
-        border-radius: 5px;
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--card-box-shadow);
+        font-size: var(--font-xxl);
+        color: var(--link-hover-color);
+    }
+    
+    .usr-img {
+        width: 100%;
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--card-box-shadow);
+    }
+    
+    .booking {
+        box-shadow: var(--card-box-shadow);
+        border-radius: var(--card-border-radius);
     }
