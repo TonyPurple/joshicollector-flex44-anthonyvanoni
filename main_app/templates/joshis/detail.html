@@ -4,6 +4,22 @@
 
 <div class="row">
     <div class="col s6">
+        {% for photo in joshi.photo_set.all %}
+        <img class="responsive-img card-panel usr-img" src="{{photo.url}}"> {% empty %}
+        <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+        {% endfor %}
+        <form action="{% url 'add_photo' joshi.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+            {% csrf_token %}
+            <input type="file" name="photo-file">
+            <br><br>
+            <input type="submit" class="btn blue-grey" value="Upload Photo">
+        </form>
+        <form action="{% url 'add_booking' joshi.id %}" method="post">
+            {% csrf_token %} {{ booking_form.as_p }}
+            <input type="submit" class="btn blue-grey" value="Add Booking">
+        </form>
+    </div>
+    <div class="col s6">
         <div class="card">
             <div class="card-content">
                 <span class="card-title">{{ joshi.name }}</span>
@@ -29,22 +45,6 @@
                 <a class="cyan-text text-darken-4" href="{% url 'joshis_delete' joshi.id %}">Delete</a>
             </div>
         </div>
-        {% for photo in joshi.photo_set.all %}
-        <img class="responsive-img card-panel usr-img" src="{{photo.url}}"> {% empty %}
-        <div class="card-panel teal-text center-align">No Photos Uploaded</div>
-        {% endfor %}
-        <form action="{% url 'add_photo' joshi.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
-            {% csrf_token %}
-            <input type="file" name="photo-file">
-            <br><br>
-            <input type="submit" class="btn blue-grey" value="Upload Photo">
-        </form>
-    </div>
-    <div class="col s6">
-        <form action="{% url 'add_booking' joshi.id %}" method="post">
-            {% csrf_token %} {{ booking_form.as_p }}
-            <input type="submit" class="btn blue-grey" value="Add Booking">
-        </form>
         <br> {% if joshi.booked_for_today %}
         <div class="card-panel teal-text center-align booking">{{joshi.name}} has been booked solidly for today</div>
         {% else %}
