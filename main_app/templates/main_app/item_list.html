@@ -5,7 +5,7 @@
     <h1 class="home-title">Item List</h1>
 </div>
 
-{% for item in item_list %}
+{% for item in item_list|dictsort:"name" %}
 <a class="deep-purple-text text-lighten-5" href="{% url 'items_detail' item.id %}">
     <div class="card pink accent-2">
         <div class="card-content">

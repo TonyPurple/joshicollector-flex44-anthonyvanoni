@@ -4,7 +4,7 @@
 
     <h1 class="home-title">Joshi List</h1>
 </div>
-{% for joshi in joshis %}
+{% for joshi in joshis|dictsort:"name" %}
 <div class="card pink accent-2">
     <a class="deep-purple-text text-lighten-5" href="{% url 'detail' joshi.id %}">
         <div class="card-content">
