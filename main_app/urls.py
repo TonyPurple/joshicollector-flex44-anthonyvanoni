@@ -5,6 +5,7 @@ urlpatterns = [
   path('', views.home, name='home'),
   path('about/', views.about, name='about'),
   path('joshis/', views.joshis_index, name='index'),
+  path('joshis/all/', views.JoshiList.as_view(), name='joshi_list'),
   path('joshis/<int:joshi_id>/', views.joshis_detail, name='detail'),
   path('joshis/create/', views.JoshiCreate.as_view(), name='joshis_create'),
   path('joshis/<int:pk>/update/', views.JoshiUpdate.as_view(), name='joshis_update'),
@@ -20,4 +21,5 @@ urlpatterns = [
   path('items/create/', views.ItemCreate.as_view(), name='items_create'),
   path('items/<int:pk>/update/', views.ItemUpdate.as_view(), name='items_update'),
   path('items/<int:pk>/delete/', views.ItemDelete.as_view(), name='items_delete'),
+  path('accounts/signup/', views.signup, name='signup'),
 ]

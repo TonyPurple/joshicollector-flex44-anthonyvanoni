@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from datetime import date
+from django.contrib.auth.models import User
 
 BOOKINGS = (
   ('D', 'Dojo Training'),
@@ -36,6 +37,7 @@ class Joshi(models.Model):
     striking = models.IntegerField(default=50)
     aerial = models.IntegerField(default=50)
     items = models.ManyToManyField(Item)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

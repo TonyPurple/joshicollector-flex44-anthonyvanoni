@@ -24,11 +24,15 @@
                 <div class="right-menu" style="float:right">
                     <button class="menu-button">Menu</button>
                     <div class="dropdown-menu">
-                        <a href="{% url 'about' %}">About</a>
+                        <a href="{% url 'about' %}">About</a> {% if user.is_authenticated %}
                         <a href="{% url 'items_create' %}">Add an Item</a>
                         <a href="{% url 'items_index' %}">View All Items</a>
                         <a href="{% url 'joshis_create' %}">Add a Joshi</a>
-                        <a href="{% url 'index' %}">View All My Joshis</a>
+                        <a href="{% url 'index' %}">My Joshis</a>
+                        <a href="{% url 'joshi_list' %}">All Joshis</a></li>
+                        <a href="{% url 'logout' %}">Log Out</a> {% else %}
+                        <a href="{% url 'signup' %}">Sign Up</a>
+                        <a href="{% url 'login' %}">Log In</a> {% endif %}
                     </div>
                 </div>
             </div>
