@@ -16,9 +16,7 @@ This app was created purely for educational purposes as I learn this tech stack.
 
 Realistically, there are many things that would need to be done to gamify the app. 
 
-At time of writing, auth in Django has not been implemented as it has not been covered in GA's SEI program up to this point.
-
-Once implemented, there would also need to be some changes made to the data structure to allow users to collect and manage each card individually.
+There will need to be some changes made to the data structure to allow users to collect and manage each card individually.
 
 I intend to add this functionality in the future, and deploy a full working app with a seeded database containing cards to demonstrate the concept as a portfolio piece.
 
@@ -47,7 +45,7 @@ Home Page - navigate through the dropdown menu.
 Add a Joshi - enter a Joshi's details including ratings for skill attributes.
 
 ![](https://i.imgur.com/siBP235.png)
-Joshi Detail Page - once created, a photo can be uploaded to the detail page. Skill ratings will also be averaged to provide an overall rating. Congratulations, you've added a top talent to your collection. Don't leave them hanging, or they might start questioning how they are being utilized.
+Joshi Detail Page - once created, a photo can be uploaded to the detail page. A single photo is allowed per page. Skill ratings will also be averaged to provide an overall rating. Congratulations, you've added a top talent to your collection. Don't leave them hanging, or they might start questioning how they are being utilized.
 
 ![](https://i.imgur.com/iHDtuV1.png)
 Joshi Detail Page - available bookings include Dojo Training, match types including Singles, Tag, Unit and Gimmick Matches, Media Appearances, and In-Ring Promos.
