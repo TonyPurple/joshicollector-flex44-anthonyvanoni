@@ -124,7 +124,7 @@ class ItemDetail(LoginRequiredMixin, DetailView):
 
 class ItemCreate(LoginRequiredMixin, CreateView):
   model = Item
-  fields = '__all__'
+  fields = ['name', 'type']
 
 class ItemUpdate(LoginRequiredMixin, UpdateView):
   model = Item
