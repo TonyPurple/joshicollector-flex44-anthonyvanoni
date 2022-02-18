@@ -15,11 +15,12 @@
             <br><br>
             <input type="submit" class="btn blue-grey" value="Upload Photo">
         </form>
+        {% endif %} {% endfor %} {% if joshi.user == request.user %}
         <form action="{% url 'add_booking' joshi.id %}" method="post">
             {% csrf_token %} {{ booking_form.as_p }}
             <input type="submit" class="btn blue-grey" value="Add Booking">
         </form>
-        {% endif %} {% endfor %}
+        {% endif %}
     </div>
     <div class="col s6">
         <div class="card">
@@ -42,10 +43,12 @@
                 <p><span class="teal-text">Aerial:</span> {{ joshi.aerial }}</p>
                 <p><span class="teal-text">Overall:</span> {{ joshi.overall }}</p>
             </div>
+            {% if joshi.user == request.user %}
             <div class="card-action indigo accent-1">
                 <a class="cyan-text text-darken-4" href="{% url 'joshis_update' joshi.id %}">Edit</a>
                 <a class="cyan-text text-darken-4" href="{% url 'joshis_delete' joshi.id %}">Delete</a>
             </div>
+            {% endif %}
         </div>
         <br> {% if joshi.booked_for_today %}
         <div class="card-panel teal-text center-align booking">{{joshi.name}} has been booked solidly for today</div>
@@ -83,12 +86,14 @@
                <span class="teal-text">{{ item.type }}</span>: {{ item.name }}
                 </span>
             </div>
+            {% if joshi.user == request.user %}
             <div class="card-action">
                 <form action="{% url 'unassoc_item' joshi.id item.id %}" method="post">
                     {% csrf_token %}
                     <button type="submit" class="btn blue-grey">Remove</button>
                 </form>
             </div>
+            {% endif %}
         </div>
         {% endfor %} {% else %}
         <h5>No Items :(</h5>
@@ -104,12 +109,14 @@
                <span class="teal-text">{{ item.type }}</span>: {{ item.name }}
                 </span>
             </div>
+            {% if joshi.user == request.user %}
             <div class="card-action">
                 <form action="{% url 'assoc_item' joshi.id item.id %}" method="post">
                     {% csrf_token %}
                     <button type="submit" class="btn blue-grey">Add</button>
                 </form>
             </div>
+            {% endif %}
         </div>
         {% endfor %} {% else %}
         <h5>{{joshi.name}} Already Has All Items Available</h5>
