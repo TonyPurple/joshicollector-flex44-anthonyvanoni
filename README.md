@@ -10,6 +10,8 @@ Users will be able to sign up, collect their favourite joshis, and add bookings 
 
 # Icebox and Lessons Learned
 
+https://joshicollector.herokuapp.com/
+
 Full disclosure - this is actually a full-CRUD app built using Python3, PostgreSQL, and Django that is being dressed up as a card collector game.
 
 This app was created purely for educational purposes as I learn this tech stack.
