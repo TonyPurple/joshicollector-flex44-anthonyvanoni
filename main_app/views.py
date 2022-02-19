@@ -125,6 +125,10 @@ class ItemDetail(LoginRequiredMixin, DetailView):
 class ItemCreate(LoginRequiredMixin, CreateView):
   model = Item
   fields = ['name', 'type']
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user  
+    return super().form_valid(form)
 
 class ItemUpdate(LoginRequiredMixin, UpdateView):
   model = Item
