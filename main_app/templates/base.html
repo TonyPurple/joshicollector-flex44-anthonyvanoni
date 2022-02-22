@@ -38,6 +38,12 @@
             </div>
         </nav>
     </header>
+    {% if user.is_authenticated %}
+    <form action="{% url 'search_result' %}" method="get">
+        <input type="search" placeholder="Search Joshis" name='searched'>
+        <button id="search" class="waves-effect waves-light btn-small" type="submit">Search</button>
+    </form>
+    {% endif %}
     <main class="container">
         {% block content %} {% endblock %}
     </main>

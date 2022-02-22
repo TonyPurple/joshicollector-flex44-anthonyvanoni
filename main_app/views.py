@@ -137,3 +137,12 @@ class ItemUpdate(LoginRequiredMixin, UpdateView):
 class ItemDelete(LoginRequiredMixin, DeleteView):
   model = Item
   success_url = '/items/'
+
+@login_required
+def search_result(request):
+  if request.method == "GET":
+    searched = request.GET['searched']
+    search_result = Joshi.objects.filter(name__contains=searched)
+    return render(request, 'main_app/joshi_search_result.html', {'searched': searched, 'search_result':search_result})
+  else:
+    return render(request, 'main_app/joshi_search_result.html')
