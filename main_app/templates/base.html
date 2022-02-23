@@ -28,7 +28,7 @@
                         <a href="{% url 'items_create' %}">Add an Item</a>
                         <a href="{% url 'items_index' %}">View All Items</a>
                         <a href="{% url 'joshis_create' %}">Add a Joshi</a>
-                        <a href="{% url 'index' %}">My Joshis</a>
+                        <a href="{% url 'index' %}">{{user}}'s Joshis</a>
                         <a href="{% url 'joshi_list' %}">All Joshis</a></li>
                         <a href="{% url 'logout' %}">Log Out</a> {% else %}
                         <a href="{% url 'signup' %}">Sign Up</a>

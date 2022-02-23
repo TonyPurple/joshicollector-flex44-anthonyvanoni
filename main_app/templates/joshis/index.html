@@ -2,7 +2,7 @@
 <div class="page-header">
     <img class="form-icon" src="{% static 'images/formicon.png' %}" alt="Joshi List" />
 
-    <h1 class="home-title">Joshi List</h1>
+    <h1 class="home-title">{{user}}'s Joshis</h1>
 </div>
 {% for joshi in joshis|dictsort:"name" %}
 <div class="card pink accent-2">
