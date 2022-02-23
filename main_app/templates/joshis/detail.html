@@ -8,7 +8,7 @@
         <img class="responsive-img card-panel usr-img" src="{{photo.url}}"> {% empty %}
         <div class="card-panel teal-text center-align">No Photos Uploaded</div>
         {% if notempty %}
-        <br> {% else %}
+        <br> {% elif joshi.user == request.user %}
         <form action="{% url 'add_photo' joshi.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
             {% csrf_token %}
             <input type="file" name="photo-file">
