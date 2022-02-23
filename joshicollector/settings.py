@@ -92,10 +92,10 @@ else:
         'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'joshicollector',
-        'USER': 'anthonyvanoni',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'USER': os.environ['USER'],
+        'PASSWORD': os.environ['PASSWORD'],
+        'HOST': os.environ['HOST'],
+        'PORT': os.environ['PORT'],
     }
 }
 
