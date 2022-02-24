@@ -39,6 +39,10 @@ class Joshi(models.Model):
     aerial = models.IntegerField(default=50)
     items = models.ManyToManyField(Item)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    likes = models.ManyToManyField(User, related_name='likes')
+
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return self.name

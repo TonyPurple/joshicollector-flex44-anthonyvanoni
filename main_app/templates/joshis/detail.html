@@ -43,6 +43,11 @@
                 <p><span class="teal-text">Aerial:</span> {{ joshi.aerial }}</p>
                 <p><span class="teal-text">Overall:</span> {{ joshi.overall }}</p>
             </div>
+            <form action="{% url 'like_joshi' joshi.pk %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn blue-grey" name="joshi_id" value="{{ post.id}}"> Like </button>
+                <h5> {{joshi.total_likes}} Likes </h5>
+            </form>
             {% if joshi.user == request.user %}
             <div class="card-action indigo accent-1">
                 <a class="cyan-text text-darken-4" href="{% url 'joshis_update' joshi.id %}">Edit</a>
