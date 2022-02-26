@@ -45,7 +45,8 @@
             </div>
             <form action="{% url 'like_joshi' joshi.pk %}" method="POST">
                 {% csrf_token %}
-                <button type="submit" class="btn blue-grey" name="joshi_id" value="{{ post.id}}"> Like </button>
+                <button type="submit" class="waves-effect waves-light btn-small" name="joshi_id" value="{{ post.id}}"> Like <i class="tiny material-icons">favorite</i></button>
+                <br>
                 <h5> {{joshi.total_likes}} Likes </h5>
             </form>
             {% if joshi.user == request.user %}
