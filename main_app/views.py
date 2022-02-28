@@ -158,7 +158,7 @@ class ItemDelete(LoginRequiredMixin, DeleteView):
 def search_result(request):
   if request.method == "GET":
     searched = request.GET['searched']
-    search_result = Joshi.objects.filter(name__contains=searched)
+    search_result = Joshi.objects.filter(name__icontains=searched)
     return render(request, 'main_app/joshi_search_result.html', {'searched': searched, 'search_result':search_result})
   else:
     return render(request, 'main_app/joshi_search_result.html')
