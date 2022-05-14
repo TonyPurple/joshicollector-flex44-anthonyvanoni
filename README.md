@@ -92,5 +92,5 @@ If you have any feedback, please reach out at tony.vanoni@outlook.com
 
 
 ## 🚀 About Me
-I've been somewhere in the middle of creative and technical my whole life. Full-stack development has proven to be the outlet for both that I was always looking for. I am currently participating in a remote flex immersive through General Assembly, where I am gaining skills and experience in developing full-stack applications. Some of my favourite technologies include Node.js, Express.js, Django, and MongoDB.
+I've been somewhere in the middle of creative and technical my whole life. Full-stack development has proven to be the outlet for both that I was always looking for. I have recently graduated from a remote flex immersive through General Assembly, where I gained skills and experience in developing full-stack applications. Some of my favourite technologies include Node.js, Express.js, Django, and MongoDB.
 
